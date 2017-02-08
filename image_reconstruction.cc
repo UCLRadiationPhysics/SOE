@@ -3,6 +3,8 @@
 // Medical Physics and Biomedical Engineering Department
 // November 2016
 
+// read by xiao 2.8.2017
+
 #include <iostream>
 #include <fstream>
 #include <list>

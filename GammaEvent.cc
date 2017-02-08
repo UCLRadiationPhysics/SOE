@@ -6,18 +6,17 @@
 #include "GammaEvent.hh"
 #include <stdlib.h>
 #include "TRandom3.h"
-#include "C3Vector.h"
-#include "constants.h"
+
 #define X_POS 0
 #define Y_POS 1
 #define Z_POS 2
 #define _USE_MATH_DEFINES
 #include <cmath>
-class C3Vector;
+class Vec3;
 
 float rand_FloatRange(float a, float b)
 {
-return ((b-a)*((float)rand()/RAND_MAX))+a;
+  return ((b-a)*((float)rand()/RAND_MAX))+a;
 }
 
 void GammaEvent::CalculateComptonAngle(){
@@ -61,9 +60,9 @@ rotAngZ = acos (mdir[X_POS]/sqrt(mdir[X_POS]*mdir[X_POS] + mdir[Y_POS]*mdir[Y_PO
  double angleMatY;
  double angleMatZ;
 
- C3Vector * axisZ=new C3Vector( 0.0, 0.0, 1.0);
- C3Vector * axisX=new C3Vector( 1.0, 0.0, 0.0);
- C3Vector * m_comptonAxisDirection=new C3Vector( mdir[X_POS],mdir[Y_POS],mdir[Z_POS]);
+ Vec3 * axisZ = new Vec3( 0.0, 0.0, 1.0);
+ Vec3 * axisX = new Vec3( 1.0, 0.0, 0.0);
+ Vec3 * m_comptonAxisDirection = new Vec3( mdir[X_POS],mdir[Y_POS],mdir[Z_POS]);
 
 
  // Rotation around Y-axis, to rotate z_axis to X component of Compton axis
@@ -73,7 +72,7 @@ rotAngZ = acos (mdir[X_POS]/sqrt(mdir[X_POS]*mdir[X_POS] + mdir[Y_POS]*mdir[Y_PO
      angleMatY = -1.0 * angleMatY;
    }
 
- C3Vector * xyVector= new C3Vector( fabs(m_comptonAxisDirection->GetX()), fabs(m_comptonAxisDirection->GetY()), 0.0);
+ Vec3 * xyVector= new Vec3( fabs(m_comptonAxisDirection->GetX()), fabs(m_comptonAxisDirection->GetY()), 0.0);
  angleMatZ = xyVector->GetScalarProductAngle(*axisX);
  if (   (m_comptonAxisDirection->GetX() >= 0 && m_comptonAxisDirection->GetY() <  0)
 	|| (m_comptonAxisDirection->GetX() <  0 && m_comptonAxisDirection->GetY() >= 0) )

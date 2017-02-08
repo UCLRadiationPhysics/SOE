@@ -24,7 +24,7 @@
 
 #define ELECTRON_MASS 510.999 // electron mass in keV
 #define AXES 3
-#define SOE_ITR 100
+#define SOE_ITR 1
 using namespace std;
 
 class GammaEvent;
@@ -48,8 +48,8 @@ int main()
   t_start  = clock();
   ifstream infile;
 
-  infile.open("gamosSimData_last.txt",ios::in); //this one to be used
-  
+  infile.open("simData.txt",ios::in); //this one to be used
+ 
   int Xbins = 400;//1000;
   int Ybins = 400;//1000;
   int Zbins = 1;
@@ -393,7 +393,7 @@ int main()
  fwrite(voxelImage,sizeof(float),Xbins*Ybins*Zbins,outputFile);
  fclose(outputFile);
  */
-   std::cout << voxel_dimX << "\t" << voxel_dimY << "\t" <<  voxel_dimZ << std::endl;
+
   // De-Allocate memory to prevent memory leak
   for (int i = 0; i < Zbins; ++i) {
     for (int j = 0; j < Ybins; ++j)

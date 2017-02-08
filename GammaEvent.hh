@@ -12,7 +12,7 @@
 #include <math.h>
 #include <vector>
 #include "VoxelParam.hh"
-#include "C3Vector.h"
+#include "Vec3.h"
 
 
 #define X_POS 0

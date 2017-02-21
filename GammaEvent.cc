@@ -105,9 +105,9 @@ rotAngZ = acos (mdir[X_POS]/sqrt(mdir[X_POS]*mdir[X_POS] + mdir[Y_POS]*mdir[Y_PO
 
 void GammaEvent::CalculateNewRandomPosition(std::vector<float> &new_pos, VoxelParam * image){
   //get random Z
-  float max_z = 10;//image->GetMaxZ();
-  float min_z =-10;// image->GetMinZ();
-  //temporarly, need to change this to a class : Detector?
+  float max_z = image->GetMaxZ();
+  float min_z = image->GetMinZ();
+ 
   float xmin = image->GetMinX();// mm
   float xmax = image->GetMaxX();// mm
   float ymin = image->GetMinY();// mm

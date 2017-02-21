@@ -3,6 +3,10 @@
 // Medical Physics and Biomedical Engineering Department
 // November 2016
 
+//SOE algorithm: Andreyev A, Sitek A, Celler A, Fast image reconstruction for Compton camera using stochastic origin ensemble approach. Med Phys. 2011 Jan;38(1):429-38.
+//Code implementation: Andrea Gutierrez, UCL
+
+
 #include <iostream>
 #include <fstream>
 #include <list>
